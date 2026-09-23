@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Lavanya's personal portfolio website">
+
+    <title>Lavanya | Portfolio</title>
+
+    <style>
+        /* -------------------- GENERAL -------------------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fffaf5;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* -------------------- HEADER -------------------- */
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 50px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: peachpuff;
+        }
+
+        /* -------------------- HERO -------------------- */
+
+        #home {
+            min-height: 80vh;
+            padding: 80px 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background-color: peachpuff;
+        }
+
+        #home h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        #home p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+
+            background-color: #333;
+            color: white;
+
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        /* -------------------- COMMON SECTION -------------------- */
+
+        section {
+            padding: 60px 30px;
+        }
+
+        section > h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        /* -------------------- ABOUT -------------------- */
+
+        #about {
+            background-color: white;
+            text-align: center;
+        }
+
+        #about p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        /* -------------------- SKILLS -------------------- */
+
+        #skills {
+            background-color: #f5d6c6;
+        }
+
+        .skills-container {
+            max-width: 800px;
+            margin: auto;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+        .skill:hover {
+            transform: translateY(-3px);
+        }
+
+        /* -------------------- PROJECTS -------------------- */
+
+        #projects {
+            background-color: white;
+        }
+
+        .projects-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            padding: 25px;
+
+            background-color: #f5f5f5;
+            border-radius: 10px;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        /* -------------------- EDUCATION -------------------- */
+
+        #education {
+            background-color: #f5d6c6;
+        }
+
+        .education-container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+
+            background-color: white;
+            padding: 30px;
+
+            border-radius: 10px;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item h3 {
+            margin-bottom: 5px;
+        }
+
+        /* -------------------- CONTACT -------------------- */
+
+        #contact {
+            background-color: white;
+            text-align: center;
+        }
+
+        #contact p {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        #contact a {
+            color: #0066cc;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* -------------------- FOOTER -------------------- */
+
+        footer {
+            background-color: #333;
+            color: white;
+
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* -------------------- RESPONSIVE -------------------- */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            #home h2 {
+                font-size: 30px;
+            }
+
+            #home p {
+                font-size: 17px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header>
+
+        <h1>Lavanya</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ==================== HOME ==================== -->
+
+        <section id="home">
+            <img src="Profile.jpeg" style="width: 300px;" alt="Profile">           
+            <h2>Hi, I'm Lavanya 👋</h2>
+
+            <p>
+                A beginner web developer learning HTML, CSS and Java.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+
+        </section>
+
+
+        <!-- ==================== ABOUT ==================== -->
+
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                Hello! I'm Lavanya. I am interested in web development
+                and programming. I am currently learning HTML, CSS and Java
+                and building projects to improve my skills.
+            </p>
+
+        </section>
+
+
+        <!-- ==================== SKILLS ==================== -->
+
+        <section id="skills">
+
+            <h2>My Skills</h2>
+
+            <div class="skills-container">
+
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">Java</div>
+                <div class="skill">Git</div>
+                <div class="skill">Problem Solving</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== PROJECTS ==================== -->
+
+        <section id="projects">
+
+            <h2>My Projects</h2>
+
+            <div class="projects-container">
+
+                <article class="project">
+
+                    <h3>Portfolio Website</h3>
+
+                    <p>
+                        A personal portfolio website created using
+                        HTML and CSS.
+                    </p>
+
+                    <a href="portf.html">
+                        View Project
+                    </a>
+
+                </article>
+
+
+                <article class="project">
+
+                    <h3>Book Store</h3>
+
+                    <p>
+                        A simple book store webpage created using
+                        HTML and CSS.
+                    </p>
+
+                    <a href="problem.html">
+                        View Project
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== EDUCATION ==================== -->
+
+        <section id="education">
+
+            <h2>Education</h2>
+
+            <div class="education-container">
+
+                <article class="education-item">
+
+                    <h3>CS-AI Course</h3>
+
+                    <p>
+                        Scaler School of Technology
+                    </p>
+
+                    <p>
+                        2026 - 2030
+                    </p>
+
+                </article>
+
+
+                <article class="education-item">
+
+                    <h3>School</h3>
+
+                    <p>
+                        Sharda Global School
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== CONTACT ==================== -->
+
+        <section id="contact">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Email:
+                <a href="mailto:your-email@example.com">
+                    lavanya.26bcs10143@sst.scaler.com
+                </a>
+            </p>
+
+            <p>
+                Github:
+                <a href="https://github.com/lavanya18winner-beep">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5vwWegddREGZBllTDN-vHDRzC4DOEq457hYrLxk03MQ&s=10"  style="width: 200px;">
+                </a><br>
+            </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/lavanya-tiwari-54234741b/">
+                    <img src="https://static.cdnlogo.com/logos/l/15/linkedin-2013.svg" style="width: 300px;">
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Lavanya. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
